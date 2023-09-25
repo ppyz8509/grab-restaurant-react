@@ -5,7 +5,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import Restaurant from "./pages/Restaurant"
 import Add from "./pages/Add"
 import Search from "./pages/Search"
-import Update from "./pages/Update"
+import Update  from './pages/Update'
+import Signin from './pages/Signin'
+import Sigup from './pages/SigUp'
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       <Route path="/" element={<Restaurant/>} />
       <Route path="/add" element={<Add/>} />
       <Route path="/search" element={<Search/>} />
-      <Route path="/updte/:restaurantId" element></Route>
+      <Route path="/update/:restaurantId" element = {<Update/>}></Route>
+      <Route path="/signin " element={<Signin/>} />
+      <Route path="/sigup" element={<Sigup/>} />
      </Routes>
     </div>
    </BrowserRouter>

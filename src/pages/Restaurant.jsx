@@ -30,7 +30,7 @@ const Restaurant = () => {
   }, []);
 
  
-
+console.log(restaurants);
   return (
     <div>
       <h1>Restaurant</h1>
@@ -38,7 +38,7 @@ const Restaurant = () => {
         <div className='restaurants'>
           {restaurants.map(restaurant => {
             return (
-             <Card restaurant={restaurant} key={restaurant.id}/>
+             <Card data={restaurant} key={restaurant.id}/>
             );
           })}
         </div>

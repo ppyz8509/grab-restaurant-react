@@ -59,7 +59,7 @@ const Search = () => {
           <ul>
             {restaurants.map((restaurant) => (
               <li key={restaurant.id}>
-                <Link to={`/restaurant/${restaurant.id}`}>
+                <Link to={`/restaurants/${restaurant.id}`}>
                   {restaurant.name} - {restaurant.type}
                 </Link>
               </li>

@@ -20,7 +20,15 @@ const NavBar = () => {
                     </li>
                     
                     <li className="nav-item">
-                        <Link className="nav-link disabled" to="/search">Search</Link>
+                        <Link className="nav-link " to="/search">Search</Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link " to="/signin">Signin</Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link " to="/signup">Signup</Link>
                     </li>
                 </ul>
                
