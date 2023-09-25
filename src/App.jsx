@@ -6,8 +6,9 @@ import Restaurant from "./pages/Restaurant"
 import Add from "./pages/Add"
 import Search from "./pages/Search"
 import Update  from './pages/Update'
-import Signin from './pages/Signin'
-import Sigup from './pages/SigUp'
+import SignIn from './pages/Signin'
+import SignUp from './pages/SignUp'
+
 
 function App() {
   return (
@@ -19,8 +20,8 @@ function App() {
       <Route path="/add" element={<Add/>} />
       <Route path="/search" element={<Search/>} />
       <Route path="/update/:restaurantId" element = {<Update/>}/>
-      <Route path="/signin " element={<Signin/>} />
-      <Route path="/sigup" element={<Sigup/>} />
+      <Route path="/signin " element={<SignIn/>} />
+      <Route path="/signup" element={<SignUp/>} />
      </Routes>
     </div>
    </BrowserRouter>
