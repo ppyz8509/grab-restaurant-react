@@ -27,16 +27,16 @@ const Add = () => {
   }
 
   const handleClick = async (e) =>{
-    e.prevenDefault();
+    e.preventDefault();
     try {
-      await axios.post(`${URL}/restaurants`,restaurant, config );
+      await axios.post(`${url}/restaurants`,restaurant, config );
       navigate("/")
     } catch (error) {
       console.error(error);
       setError(true)
     }
   }
-  const handleClear =(e)=>{
+  const handleClear =()=>{
     setRestaurants ({
       name: "",
       type:"",
@@ -60,7 +60,7 @@ const Add = () => {
             name="name"
             placeholder="Restaurant name"
             onChange={handleChage}
-                value={handleClear}
+                value={restaurant.name}
             />
           </div>
             <div className="form-group">
@@ -71,7 +71,7 @@ const Add = () => {
                 name="type"
                 placeholder="Restaurant type" 
                 onChange={handleChage}
-                value={handleClear}/>
+                value={restaurant.type}/>
             </div>
             <div className="form-group">
               <label htmlFor="name">Restaurant imageurl</label>
@@ -81,7 +81,7 @@ const Add = () => {
                 name="image"
                 placeholder="Restaurant image"
                 onChange={handleChage}
-                value={restaurant.name} />
+                value={restaurant.image} />
             </div>
             <br/>
             <Link to="" className="btn btn-success" onClick={handleClick}>
