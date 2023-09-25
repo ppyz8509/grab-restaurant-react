@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import { Link } from 'react-router-dom';
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -20,7 +21,13 @@ const NavBar = () => {
                     </li>
                     
                     <li className="nav-item">
-                        <Link className="nav-link disabled" to="/search">Search</Link>
+                        <Link className="nav-link " to="/search">Search</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " to="/SingIn">SingIn</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link " to="/SingUp">SingUp</Link>
                     </li>
                 </ul>
                
