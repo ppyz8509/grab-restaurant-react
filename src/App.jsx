@@ -7,7 +7,7 @@ import Add from "./pages/Add"
 import Search from "./pages/Search"
 import Update  from './pages/Update'
 import SignUp from './pages/SignUp'
-import SignIn from './pages/Signin'
+import SignIn from './pages/SignIn'
 
 
 
@@ -22,6 +22,7 @@ function App() {
       <Route path="/search" element={<Search/>} />
       <Route path="/update/:restaurantId" element = {<Update/>}/>
       <Route path="/signin" element = {<SignIn/>}/>
+          <Route path="/signup" element={<SignUp />} />
   
      </Routes>
     </div>
