@@ -1,61 +1,82 @@
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import AuthService from '../services/auth.server';
 
-const SignIn = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+const Signin = () => {
+  const [user, setUser] = useState({
+    user: '',
+    password: '',
+  });
+  const navigate = useNavigate();
+  const [error, setError] = useState(false);
+
+  const handleChange = (e) => {
+    setUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Add your sign-in logic here
-    console.log('Sign-in submitted:', { username, password });
+  const handleSignin = async (e) => {
+    e.preventDefault();
+    try {
+      const login = await AuthService.login(user.username,user.password);
+      navigate('/');
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    }
   };
 
   return (
-    <div>
-      <h2>Sign In</h2>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="type"></label>
-          <input
-            type="text"
-            id="username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
+    <div className="container">
+      <h1>Sign In</h1>
+      <div className="row form">
+        <div className="col-6 card justify-content-center">
+          <h5 className="card-header">Login to Your Account</h5>
+          {/* <div className="error">{error && 'Incorrect email or password.'}</div> */}
+          <div className="card-body">
+            <form>
+              <div className="form-group">
+                <label htmlFor="username">name</label>
+                <input
+                  type="username"
+                  className="form-control"
+                  name="username"
+                  placeholder="username"
+                  onChange={handleChange}
+                  value={user.username}
+                />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  className="form-control"
+                  name="password"
+                  placeholder="Password"
+                  onChange={handleChange}
+                  value={user.password}
+                />
+              </div>
+
+              <button
+                type="submit"
+           
+                className="btn btn-success"
+                onClick={handleSignin}
+              >
+                Sign In
+              </button>
+
+              <Link to="/signup" className="btn btn-secondary">
+                Don't have an account? Sign Up
+              </Link>
+            </form>
+          </div>
         </div>
-        <div>
-          <label htmlFor="type">password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <div>
-          <label htmlFor="type">comfirm password</label>
-          <input
-            type="password"
-            id="password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button type="submit">Sign In</button>
-      </form>
+      </div>
     </div>
   );
 };
 
-export default SignIn;
+export default Signin;

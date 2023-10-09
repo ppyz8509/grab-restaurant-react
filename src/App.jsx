@@ -8,7 +8,7 @@ import Add from "./pages/Add"
 import Search from "./pages/Search"
 import Update from "./pages/Update"
 import SignIn from './pages/SignIn'
-import SingUp from './pages/SingUp'
+import SignUp from './pages/SingUp'
 
 function App() {
   return (
@@ -21,6 +21,7 @@ function App() {
       <Route path="/search" element={<Search/>} />
           <Route path="/update/:restaurantId" element={<Update/>}/>
           <Route path="/singin" element={<SignIn />} />
+          <Route path="/singup" element={<SignUp />} />
           
      </Routes>
     </div>
