@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import AuthService from '../services/auth.server';
-
+import {useAuthContext} from '../context/AuthContext'
 
 const Signin = () => {
   const [user, setUser] = useState({
@@ -9,6 +9,7 @@ const Signin = () => {
     password: '',
   });
   const navigate = useNavigate();
+  const {login} = useAuthContext
   const [error, setError] = useState(false);
 
   const handleChange = (e) => {
@@ -68,7 +69,7 @@ const Signin = () => {
                 Sign In
               </button>
 
-              <Link to="/signup" className="btn btn-secondary">
+              <Link to="/SingUp" className="btn btn-secondary">
                 Don't have an account? Sign Up
               </Link>
             </form>

@@ -1,44 +1,72 @@
+/* Apply box-sizing to all elements */
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
+/* Reset body styles and set overall page styles */
 body {
-  margin: 0;
-  padding: 2rem 5rem;
-  text-align: center;
-  background-color: rgb(151, 151, 151);
-  color: rgb(196, 181, 181);
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: 100;
-  font-size: 16px;
+    margin: 0;
+    padding: 2rem 5rem;
+    text-align: center;
+    background-color: rgb(223, 221, 221);
+    color: rgb(211, 98, 98);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 100;
+    font-size: 16px;
 }
 
+/* Style the main heading */
 h1 {
-  font-family: cursive;
-  text-align: center;
-  color: rgb(187, 187, 187);
-  font-size: 2rem;
+    font-family: cursive;
+    text-align: center;
+    color: rgb(65, 107, 56);
+    font-size: 2rem;
 }
 
+/* Style the container for restaurants */
 .restaurants {
-  display: flex;
+ display: flex;
   flex-wrap: wrap;
   color: black;
   justify-content: center;
   padding: 0px;
+
+
+    
 }
 
-.restaurants>img {
-  flex: 1;
+/* Style individual restaurant images */
+.restaurants > img {
+      flex: 1;
   object-fit: cover;
   margin: auto;
 }
 
+/* Style input elements */
 input {
-  border: 1px solid rgb(182, 182, 182);
-  border-radius: 24px;
-  width: 50%;
-  padding: 20%;
-  margin: 0%;
-  font-size: 100%;
+    border: 1px solid rgb(182, 182, 182);
+    border-radius: 24px;
+    width: 50%;
+    padding: 1rem; /* Adjust padding for better appearance */
+    margin: 0 auto; /* Center horizontally */
+    font-size: 100%;
 }
+.form {
+    justify-content: center;
+  }
+  .navbar {
+    border-radius: 20px;
+  }
+  .card{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+   margin-left: 20px;
+  }
+  .badge{
+    color: black;
+  }
