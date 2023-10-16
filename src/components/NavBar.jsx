@@ -36,15 +36,15 @@ const NavBar = () => {
                     <li className="nav-item">
                         <Link className="nav-link " to="/SingIn">SingIn</Link>
                     </li>
-                    )}
+                    )} 
                     {!user && (
                     <li className="nav-item">
                         <Link className="nav-link " to="/SingUp">SingUp</Link>
                     </li>
-                    )}
+                     )} 
                 </ul>
               
-                 {user && (
+                  {user && ( 
                     <div className="from-inline my-2 my-lg-0">
                         <span className="badge">
                             Welcome, <span className="mr-sm2 h4">{user.username}</span> 

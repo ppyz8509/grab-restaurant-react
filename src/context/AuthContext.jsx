@@ -1,4 +1,4 @@
-import { useContext,createContext, useState } from "react";
+import { useContext,createContext, useState, useEffect } from "react";
 import AuthService from "../services/auth.server";
 const AuthContext = createContext(null);
 
@@ -11,6 +11,16 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
   };
 
+  function getUser() {
+    const temp = localStorage.getItem('user')
+    const savedUser = JSON.parse(temp);
+    return savedUser || null;
+  }
+
+  useEffect(()=>{
+     const temp = JSON.stringify(user)
+     localStorage.setItem("user", temp);
+  },[user])
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
       {children}
